@@ -1,0 +1,41 @@
+.head {
+    font-size: 24px;
+}
+
+.listArea {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card {
+    width: 320px;
+    height: 40px;
+    background: crimson;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    opacity: 10px;
+}
+
+.card:hover {
+    opacity: 0px;
+    box-shadow: tan;
+
+    .label {
+        font-weight: 800;
+    }
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.closeButton {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
