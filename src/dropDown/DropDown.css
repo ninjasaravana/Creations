@@ -1,0 +1,38 @@
+.parent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 50px 0
+}
+
+.cover {
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+
+.inputArea {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    margin: 16px;
+    flex-direction: column;
+}
+
+.selectMenu {
+    /* width: 250px; */
+    height: 40px;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+
+}
+
+.divider {
+    outline: 2px solid royalblue;
+    height: 100%
+}

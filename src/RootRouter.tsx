@@ -1,7 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Counter from "./counter/Counter";
 import List from "./addRemoveList/List";
-import Dummy from "./dummy";
+import Home from "./home/Home";
+import SearchFilter from "./searchFilter/SearchFilter";
+import Form from "./form/Form";
+import DropDown from "./dropDown/DropDown";
+import ApiRender from "./apirender/ApiRender";
+import LoginForm from "./loginForm/LoginForm";
 
 const RootRouter = () => {
   return (
@@ -9,7 +14,12 @@ const RootRouter = () => {
       <Routes>
         <Route path='/list' element={<List />} />
         <Route path='/counter' element={<Counter />} />
-        <Route path='/' element={<Dummy />} />
+        <Route path='/search' element={<SearchFilter />} />
+        <Route path='/form' element={<Form />} />
+        <Route path='/drop' element={<DropDown />} />
+        <Route path='/api' element={<ApiRender />} />
+        <Route path='/login' element={<LoginForm />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </>
   );

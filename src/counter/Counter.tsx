@@ -1,7 +1,7 @@
 import React from "react";
-import "./App.css";
+import "./Counter.css";
 import { useDispatch, useSelector } from "react-redux";
-// function Counter() {
+
 const Counter: React.FC = () => {
   const counter = useSelector((state: any) => state.counter);
   const dispatch = useDispatch();
@@ -23,10 +23,18 @@ const Counter: React.FC = () => {
         <h2>COUNTER APP</h2>
         <h1>{counter}</h1>
         <div className='buttonDiv'>
-          <button onClick={increment}>Increment +</button>
-          <button onClick={decrement}>Decrement -</button>
-          <button onClick={AddBy}>Add By 10</button>
-          <button onClick={Reset}>Reset</button>
+          <button className='counterButton' onClick={increment}>
+            Increment +
+          </button>
+          <button className='counterButton' onClick={decrement}>
+            Decrement -
+          </button>
+          <button className='counterButton' onClick={AddBy}>
+            Add By 10
+          </button>
+          <button className='counterButton' onClick={Reset}>
+            Reset
+          </button>
         </div>
       </div>
     </div>
