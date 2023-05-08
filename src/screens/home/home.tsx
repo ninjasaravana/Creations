@@ -8,17 +8,21 @@ import DropDown from "../dropDown/dropDown";
 import ApiRender from "../apirender/apiRender";
 import LoginForm from "../loginForm/loginForm";
 import Modal from "../modal/modal";
+import Checkbox from "../checkbox/checkbox";
+import Pagination from "../pagination/pagination";
 
 const Home: React.FC = () => {
   const components = [
     <Counter />,
-    <List />,
+    <ApiRender />,
     <SearchFilter />,
+    <List />,
     <Form />,
     <DropDown />,
-    <ApiRender />,
     <LoginForm />,
     <Modal />,
+    <Checkbox />,
+    <Pagination />,
   ];
   return (
     <div className={styles.container}>

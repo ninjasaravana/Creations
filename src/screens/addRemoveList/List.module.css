@@ -32,8 +32,8 @@
     cursor: pointer;
     }
     
-    input {
-        font-size: 16px;
+.addInput {
+    font-size: 16px;
 }
 
 .card:hover {

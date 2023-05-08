@@ -29,6 +29,7 @@ const List: React.FC = () => {
         <h2>List Render</h2>
         <div className={styles.inputArea}>
           <input
+            className={styles.addInput}
             placeholder='Eg : Apple'
             name='Add item'
             type='text'

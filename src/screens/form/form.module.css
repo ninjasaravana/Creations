@@ -11,7 +11,7 @@
     width: 400px;
 }
 
-form {
+.submitForm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +19,7 @@ form {
     justify-content: center;
 }
 
-input {
+.inputField {
     font-size: 16px;
     height: 36px;
     width: 75%;

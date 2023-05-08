@@ -29,9 +29,10 @@ const ApiRender = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        margin: 32,
       }}
     >
-      <h2>API</h2>
+      <h2 style={{ fontSize: 36 }}>API</h2>
       {loading && <Spinner />}
       {response?.status && (
         <img

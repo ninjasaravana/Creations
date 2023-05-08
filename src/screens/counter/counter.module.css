@@ -13,7 +13,7 @@
 
 }
 
-h2 {
+.title {
   width: 100%;
   align-items: center;
   display: flex;
@@ -21,7 +21,7 @@ h2 {
   font-size: 32px;
 }
 
-h1 {
+.counterValue {
   width: 100%;
   align-items: center;
   display: flex;

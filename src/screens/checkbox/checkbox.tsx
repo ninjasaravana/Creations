@@ -2,84 +2,140 @@ import React, { useCallback, useState, useMemo } from "react";
 import styles from "./checkbox.module.css";
 
 type checkState = {
-  label: string;
-  status: boolean;
-  // index:number;
+  value: string;
+  checked: boolean;
+  index: number;
 };
 const Checkbox: React.FC = () => {
   const listValues = useMemo(() => {
-    return [
-      "Apple",
-      "App",
-      "Ant",
-      "Sea",
-      "Snake",
-      "Sand",
-      "Seal",
-      "zebra",
-      "$123",
-      "45690",
-    ];
+    return ["Apple", "App", "Ant", "Sea", "Snake", "Sand", "Seal", "zebra"];
   }, []);
   const listWithCheckState = listValues.map((list, idx) => {
     return {
-      label: list,
-      status: false,
-      // index:idx
+      value: list,
+      checked: false,
+      index: idx,
     };
   });
-  const [checked, setChecked] = useState<checkState[]>(listWithCheckState);
-  const [selected, setSelected] = useState<string[]>([]);
+  const [checked, setChecked] = useState<string>("");
+  const [multiChecked, setMultiChecked] =
+    useState<checkState[]>(listWithCheckState);
+  const [radio, setRadio] = useState<string>("Apple");
 
-  const handleChecked = useCallback(
-    (data: checkState) => {
-      if (!data.status) {
-        const correctedState = checked.map((c) => {
-          return {
-            label: data.label,
-            status: c.label === data.label ? true : false,
-          };
-        });
-        setChecked(correctedState);
+  const handleSingleSelect = useCallback(
+    (data: string) => {
+      if (checked === data) {
+        setChecked("");
       } else {
-        const correctedState = checked.map((c) => {
-          return {
-            label: data.label,
-            status: c.label === data.label ? false : true,
-          };
-        });
-        setChecked(correctedState);
+        setChecked(data);
       }
     },
-    [checked, selected]
+    [checked]
   );
-  console.log({ selected });
+  const handleMultiselect = useCallback(
+    (data: checkState) => {
+      if (!data.checked) {
+        const correctedState = multiChecked.map((c) => {
+          return {
+            value: c.value,
+            checked: c.value === data.value ? true : c.checked,
+            index: c.index,
+          };
+        });
+        setMultiChecked(correctedState);
+      } else {
+        const correctedState = multiChecked.map((c) => {
+          return {
+            value: c.value,
+            checked: c.value === data.value ? false : c.checked,
+            index: c.index,
+          };
+        });
+        setMultiChecked(correctedState);
+      }
+    },
+    [multiChecked]
+  );
+
+  const handleRadioInput = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setRadio(e.target.value);
+    },
+    []
+  );
+
+  const checkedRecords = useMemo(() => {
+    const selected = multiChecked
+      .filter((data) => data.checked === true)
+      .map((d) => d.value)
+      .toString();
+    return selected;
+  }, [multiChecked]);
+
   return (
     <div className={styles.parent}>
       <div className={styles.cover}>
         <div className={styles.inputArea}>
-          <h2>CheckBox</h2>
-          {listWithCheckState.map((data, idx) => {
+          <h3>CheckBox - SingleSelect</h3>
+          {listValues.map((data, idx) => {
             return (
               <div className={styles.cover} key={idx}>
                 <input
+                  className={styles.checkInput}
                   key={idx}
                   type='checkbox'
-                  multiple={true}
-                  checked={data.status}
-                  onChange={() => handleChecked(data)}
+                  multiple={false}
+                  checked={data === checked}
+                  onChange={() => handleSingleSelect(data)}
                 />
-                <label key={idx}>{data.label}</label>
+                <label className={styles.checkLabel}>{data}</label>
               </div>
             );
           })}
-          <h3>Selected checkbox values : </h3>
+          <h4>Selected checkbox values :</h4>
+          <span className={styles.message}>{checked}</span>
         </div>
         <div className={styles.divider} />
         <div className={styles.inputArea}>
-          <h2>Radio</h2>
-
-          <h3>Selected radio value :</h3>
+          <h3>CheckBox - MultiSelect</h3>
+          {multiChecked.map((data, idx) => {
+            return (
+              <div className={styles.cover} key={idx}>
+                <input
+                  className={styles.checkInput}
+                  key={idx}
+                  type='checkbox'
+                  multiple={false}
+                  checked={data.checked}
+                  onChange={() => handleMultiselect(data)}
+                />
+                <label className={styles.checkLabel}>{data.value}</label>
+              </div>
+            );
+          })}
+          <h4>Selected checkbox values :</h4>
+          <span className={styles.message}>{checkedRecords}</span>
+        </div>
+        <div className={styles.divider} />
+        <div className={styles.inputArea}>
+          <h3>Radio SinglSelect</h3>
+          {listValues.map((data, idx) => {
+            return (
+              <div className={styles.cover} key={idx}>
+                <input
+                  className={styles.checkInput}
+                  key={idx}
+                  type='radio'
+                  value={data}
+                  checked={radio === data}
+                  onChange={handleRadioInput}
+                />
+                <label className={styles.checkLabel}>{data}</label>
+              </div>
+            );
+          })}
+          <h4>Selected radio value :</h4>
+          <span className={styles.message}>{radio}</span>
         </div>
       </div>
     </div>

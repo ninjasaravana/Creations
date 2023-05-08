@@ -60,8 +60,8 @@ const LoginForm: React.FC = () => {
   return (
     <div className={styles.parent}>
       <div className={styles.head}>
-        <h2>Form</h2>
         <form onSubmit={onSubmit}>
+          <h2>Login Form</h2>
           <div className={styles.inputPart}>
             <span className={styles.label}>Username</span>
             <input

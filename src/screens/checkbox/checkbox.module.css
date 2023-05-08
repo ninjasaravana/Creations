@@ -2,7 +2,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    margin: 50px 0
+    margin: 50px 0;
+        font-family: monospace;
 }
 
 .cover {
@@ -12,16 +13,15 @@
     flex-direction: row;
     align-items: center;
     gap: 16px;
-    justify-content: center;
 }
 
-input {
+.checkInput {
     height: 24px;
     width: 24px;
     cursor: pointer;
 }
 
-label {
+.checkLabel {
     font-size: 16px;
     font-weight: 800;
     color: black;
@@ -50,4 +50,10 @@ label {
 .divider {
     outline: 2px solid royalblue;
     height: 100%
+}
+.message {
+    font-size: 20px;
+    font-weight: 800;
+    padding-bottom: 24px;
+    color: yellowgreen;
 }

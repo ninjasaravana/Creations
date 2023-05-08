@@ -77,11 +77,12 @@ const Form: React.FC = () => {
   return (
     <div className={styles.parent}>
       <div className={styles.head}>
-        <h2>Form</h2>
-        <form onSubmit={onSubmit}>
+        <form className={styles.submitForm} onSubmit={onSubmit}>
+          <h2>Form</h2>
           <div className={styles.inputPart}>
             <span className={styles.label}>Name</span>
             <input
+              className={styles.inputField}
               placeholder='Ram'
               name='name'
               type='text'
@@ -90,10 +91,13 @@ const Form: React.FC = () => {
               maxLength={50}
             />
           </div>
-          {formData.errors.name !== "" && <p>Name Required</p>}
+          {formData.errors.name !== "" && (
+            <p className={styles.error}>Name Required</p>
+          )}
           <div className={styles.inputPart}>
             <span className={styles.label}>DOB</span>
             <input
+              className={styles.inputField}
               placeholder='01-01-2023'
               name='dob'
               type='date'
@@ -101,10 +105,13 @@ const Form: React.FC = () => {
               onChange={handleChange}
             />
           </div>
-          {formData.errors.dob !== "" && <p>Invalid DOB</p>}
+          {formData.errors.dob !== "" && (
+            <p className={styles.error}>Invalid DOB</p>
+          )}
           <div className={styles.inputPart}>
             <span className={styles.label}>Email-Id</span>
             <input
+              className={styles.inputField}
               placeholder='abc@gmail.com'
               name='email'
               type='email'
@@ -113,10 +120,13 @@ const Form: React.FC = () => {
               maxLength={50}
             />
           </div>
-          {formData.errors.email !== "" && <p>Invalid Email id</p>}
+          {formData.errors.email !== "" && (
+            <p className={styles.error}>Invalid Email id</p>
+          )}
           <div className={styles.inputPart}>
             <span className={styles.label}>Phone.no</span>
             <input
+              className={styles.inputField}
               placeholder='9876543210'
               name='phone'
               type='tel'
@@ -125,7 +135,9 @@ const Form: React.FC = () => {
               maxLength={15}
             />
           </div>
-          {formData.errors.phone !== "" && <p>Invalid Phone no</p>}
+          {formData.errors.phone !== "" && (
+            <p className={styles.error}>Invalid Phone no</p>
+          )}
           <button className={styles.submitButton} type='submit'>
             Submit
           </button>

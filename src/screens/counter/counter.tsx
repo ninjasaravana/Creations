@@ -20,8 +20,8 @@ const Counter: React.FC = () => {
   return (
     <div className={styles.parent}>
       <div className={styles.container}>
-        <h2>COUNTER APP</h2>
-        <h1>{counter}</h1>
+        <h2 className={styles.title}>COUNTER APP</h2>
+        <h1 className={styles.counterValue}>{counter}</h1>
         <div className={styles.buttonDiv}>
           <button className={styles.counterButton} onClick={increment}>
             Increment +
