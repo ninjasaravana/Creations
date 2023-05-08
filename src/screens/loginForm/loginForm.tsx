@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import "./LoginForm.css";
+import styles from "./loginForm.module.css";
 
 const LoginForm: React.FC = () => {
   const intialState = useMemo(() => {
@@ -58,12 +58,12 @@ const LoginForm: React.FC = () => {
     [stateReset, validation]
   );
   return (
-    <div className='parent'>
-      <div className='head'>
+    <div className={styles.parent}>
+      <div className={styles.head}>
         <h2>Form</h2>
         <form onSubmit={onSubmit}>
-          <div className='inputPart'>
-            <span className='label'>Username</span>
+          <div className={styles.inputPart}>
+            <span className={styles.label}>Username</span>
             <input
               placeholder='Ram'
               name='username'
@@ -74,8 +74,8 @@ const LoginForm: React.FC = () => {
             />
           </div>
           {formData.errors.username !== "" && <p>{formData.errors.username}</p>}
-          <div className='inputPart'>
-            <span className='label'>Password</span>
+          <div className={styles.inputPart}>
+            <span className={styles.label}>Password</span>
             <input
               name='password'
               type='password'
@@ -84,11 +84,13 @@ const LoginForm: React.FC = () => {
             />
           </div>
           {formData.errors.password !== "" && <p>{formData.errors.password}</p>}
-          <button className='submitButton' type='submit'>
+          <button className={styles.submitButton} type='submit'>
             Login
           </button>
         </form>
-        {success && <h3 className='success'>Logged In Successfully!!!</h3>}
+        {success && (
+          <h3 className={styles.success}>Logged In Successfully!!!</h3>
+        )}
       </div>
     </div>
   );

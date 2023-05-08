@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Counter from "./counter/Counter";
-import List from "./addRemoveList/List";
-import Home from "./home/Home";
-import SearchFilter from "./searchFilter/SearchFilter";
-import Form from "./form/Form";
-import DropDown from "./dropDown/DropDown";
-import ApiRender from "./apirender/ApiRender";
-import LoginForm from "./loginForm/LoginForm";
+import Counter from "./screens/counter/counter";
+import List from "./screens/addRemoveList/List";
+import Home from "./screens/home/home";
+import SearchFilter from "./screens/searchFilter/searchFilter";
+import Form from "./screens/form/form";
+import DropDown from "./screens/dropDown/dropDown";
+import ApiRender from "./screens/apirender/apiRender";
+import LoginForm from "./screens/loginForm/loginForm";
 
 const RootRouter = () => {
   return (

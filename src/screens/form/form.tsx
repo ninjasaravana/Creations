@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import "./Form.css";
+import styles from "./form.module.css";
 
 const Form: React.FC = () => {
   const intialState = useMemo(() => {
@@ -17,7 +17,6 @@ const Form: React.FC = () => {
     };
   }, []);
   const [formData, setFormData] = useState(intialState);
-  // const [error, setError] = useState(intialState);
   const [success, setSuccess] = useState(false);
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -76,12 +75,12 @@ const Form: React.FC = () => {
     [stateReset, validation]
   );
   return (
-    <div className='parent'>
-      <div className='head'>
+    <div className={styles.parent}>
+      <div className={styles.head}>
         <h2>Form</h2>
         <form onSubmit={onSubmit}>
-          <div className='inputPart'>
-            <span className='label'>Name</span>
+          <div className={styles.inputPart}>
+            <span className={styles.label}>Name</span>
             <input
               placeholder='Ram'
               name='name'
@@ -92,8 +91,8 @@ const Form: React.FC = () => {
             />
           </div>
           {formData.errors.name !== "" && <p>Name Required</p>}
-          <div className='inputPart'>
-            <span className='label'>DOB</span>
+          <div className={styles.inputPart}>
+            <span className={styles.label}>DOB</span>
             <input
               placeholder='01-01-2023'
               name='dob'
@@ -103,8 +102,8 @@ const Form: React.FC = () => {
             />
           </div>
           {formData.errors.dob !== "" && <p>Invalid DOB</p>}
-          <div className='inputPart'>
-            <span className='label'>Email-Id</span>
+          <div className={styles.inputPart}>
+            <span className={styles.label}>Email-Id</span>
             <input
               placeholder='abc@gmail.com'
               name='email'
@@ -115,8 +114,8 @@ const Form: React.FC = () => {
             />
           </div>
           {formData.errors.email !== "" && <p>Invalid Email id</p>}
-          <div className='inputPart'>
-            <span className='label'>Phone.no</span>
+          <div className={styles.inputPart}>
+            <span className={styles.label}>Phone.no</span>
             <input
               placeholder='9876543210'
               name='phone'
@@ -127,11 +126,13 @@ const Form: React.FC = () => {
             />
           </div>
           {formData.errors.phone !== "" && <p>Invalid Phone no</p>}
-          <button className='submitButton' type='submit'>
+          <button className={styles.submitButton} type='submit'>
             Submit
           </button>
         </form>
-        {success && <h3 className='success'>Form Submitted Successfully!!!</h3>}
+        {success && (
+          <h3 className={styles.success}>Form Submitted Successfully!!!</h3>
+        )}
       </div>
     </div>
   );

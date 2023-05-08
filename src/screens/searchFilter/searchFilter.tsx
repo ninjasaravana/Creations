@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import "./SearchFilter.css";
+import styles from "./searchFilter.module.css";
 
 const SearchFilter: React.FC = () => {
   const values = useMemo(() => {
@@ -36,10 +36,10 @@ const SearchFilter: React.FC = () => {
   }, [data, values]);
 
   return (
-    <div className='parent'>
-      <div className='head'>
+    <div className={styles.parent}>
+      <div className={styles.head}>
         <h2>Search Filter</h2>
-        <div className='inputArea'>
+        <div className={styles.inputArea}>
           <input
             placeholder='Eg : Apple'
             name='Search'
@@ -48,22 +48,22 @@ const SearchFilter: React.FC = () => {
             onChange={(e) => onChangeSearchInput(e)}
             maxLength={50}
           />
-          <button className='addButton' onClick={search}>
+          <button className={styles.addButton} onClick={search}>
             Search
           </button>
         </div>
-        <div className='listArea'>
+        <div className={styles.listArea}>
           {records.length ? (
             records.map((value, idx) => {
               return (
-                <div className='card' key={idx}>
-                  <span className='label'>{value}</span>
+                <div className={styles.card} key={idx}>
+                  <span className={styles.label}>{value}</span>
                 </div>
               );
             })
           ) : (
-            <div className='nocard'>
-              <span className='label'>No records to search</span>
+            <div className={styles.nocard}>
+              <span className={styles.label}>No records to search</span>
             </div>
           )}
         </div>

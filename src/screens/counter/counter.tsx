@@ -1,5 +1,5 @@
 import React from "react";
-import "./Counter.css";
+import styles from "./counter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const Counter: React.FC = () => {
@@ -18,21 +18,21 @@ const Counter: React.FC = () => {
     dispatch({ type: "RST" });
   };
   return (
-    <div className='parent'>
-      <div className='container'>
+    <div className={styles.parent}>
+      <div className={styles.container}>
         <h2>COUNTER APP</h2>
         <h1>{counter}</h1>
-        <div className='buttonDiv'>
-          <button className='counterButton' onClick={increment}>
+        <div className={styles.buttonDiv}>
+          <button className={styles.counterButton} onClick={increment}>
             Increment +
           </button>
-          <button className='counterButton' onClick={decrement}>
+          <button className={styles.counterButton} onClick={decrement}>
             Decrement -
           </button>
-          <button className='counterButton' onClick={AddBy}>
+          <button className={styles.counterButton} onClick={AddBy}>
             Add By 10
           </button>
-          <button className='counterButton' onClick={Reset}>
+          <button className={styles.counterButton} onClick={Reset}>
             Reset
           </button>
         </div>

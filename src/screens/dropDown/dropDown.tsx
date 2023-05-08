@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import "./DropDown.css";
+import styles from "./dropDown.module.css";
 import Select from "react-select";
 
 const DropDown: React.FC = () => {
@@ -50,19 +50,19 @@ const DropDown: React.FC = () => {
     setValue1(value1);
   };
   return (
-    <div className='parent'>
-      <div className='cover'>
-        <div className='inputArea'>
+    <div className={styles.parent}>
+      <div className={styles.cover}>
+        <div className={styles.inputArea}>
           <h2>Drop Down - Normal</h2>
           <select
-            className='selectMenu'
+            className={styles.selectMenu}
             name='number'
             onChange={(e) => selectedValue(e)}
             defaultValue={dropDownOptions[0]}
           >
             {dropDownOptions.map((val, idx) => {
               return (
-                <option className='optionsMenu' key={idx}>
+                <option className={styles.optionsMenu} key={idx}>
                   {val}
                 </option>
               );
@@ -70,11 +70,11 @@ const DropDown: React.FC = () => {
           </select>
           <h3>Selected drop down value : {value}</h3>
         </div>
-        <div className='divider' />
-        <div className='inputArea'>
+        <div className={styles.divider} />
+        <div className={styles.inputArea}>
           <h2>Drop Down - React Component</h2>
           <Select
-            className='selectMenu'
+            className={styles.selectMenu}
             options={dropDownOptions1}
             onChange={handleSelectChange}
           />

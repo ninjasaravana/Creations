@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "../spinner/Spinner";
+import Spinner from "../../components/spinner/spinner";
 
 const ApiRender = () => {
   const [response, setResponse] = useState<any>(null);
