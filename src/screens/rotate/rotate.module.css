@@ -1,0 +1,22 @@
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+}

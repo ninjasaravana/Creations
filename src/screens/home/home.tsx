@@ -7,6 +7,7 @@ import Form from "../form/form";
 import DropDown from "../dropDown/dropDown";
 import ApiRender from "../apirender/apiRender";
 import LoginForm from "../loginForm/loginForm";
+import Modal from "../modal/modal";
 
 const Home: React.FC = () => {
   const components = [
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
     <DropDown />,
     <ApiRender />,
     <LoginForm />,
+    <Modal />,
   ];
   return (
     <div className={styles.container}>

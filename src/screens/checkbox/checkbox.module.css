@@ -1,0 +1,53 @@
+.parent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 50px 0
+}
+
+.cover {
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+input {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 800;
+    color: black;
+    min-width: 25%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inputArea {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    margin: 16px;
+    flex-direction: column;
+}
+
+.selectMenu {
+    height: 40px;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+
+}
+
+.divider {
+    outline: 2px solid royalblue;
+    height: 100%
+}
