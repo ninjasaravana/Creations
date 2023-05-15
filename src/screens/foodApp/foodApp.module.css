@@ -2,11 +2,14 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  margin: 150px 0
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
   width: 60%;
+  margin: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,48 +17,164 @@
 }
 
 .title {
-  width: 100%;
-  align-items: center;
+  width: fit-content;
+  align-self: center;
   display: flex;
   justify-content: center;
   font-size: 32px;
+  color: wheat;
+  font-family: system-ui;
+  letter-spacing: 8px;
+  padding: 8px;
+  background: rgb(65 94 121 / 81%);
+  border-radius: 50px;
 }
 
+.card {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
 
 /*  */
 .foodCard {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 24px;
-  background: burlywood;
-  gap: 16px
+  padding: 12px;
+  gap: 30px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(143, 183, 143, 0.3);
+  border-radius: 16px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.foodName {
+.resultCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 30px;
+  backdrop-filter: blur(5px);
+  background: rgb(65 94 121 / 81%);
+  border-radius: 30px;
+  align-items: center;
+}
+
+.foodContent {
+  display: flex;
+  justify-content: space-between;
   width: 90%;
-  padding: 8px;
-  height: 40px;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: rgba(143, 183, 143, 0.5);
-  border-radius: 16px;
-  cursor: pointer;
-  font-family: monospace;
+}
+
+.resultContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.resultValue {
+  height: 16px;
   align-items: center;
   justify-content: flex-start;
   display: flex;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: coral;
+  padding: 8px;
+}
+
+.foodName {
+  height: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f7ffb2;
+}
+
+.amount {
+  height: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: coral;
+  padding: 8px;
+  background: rgb(9 94 170 / 40%);
+  border-radius: 50px;
 }
 
 .foodCount {
-  width: auto;
+  width: 110px;
+  font-size: 18px;
+  font-weight: 600;
+  color: coral;
+  border-radius: 30px;
+  padding: 8px;
+  margin: 0;
+  height: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-.counterButton {
-  width: 120px;
-  height: 40px;
+.buttonArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.buttonSection{
+  display: flex;
+  gap: 8px;
+}
+.addButton {
+  width: 44px;
+  padding: 8px;
+  height: 16px;
   font-size: medium;
   font-weight: 600;
-  background-color: darkseagreen;
-  border-radius: 16px;
+  background-color: rgba(256, 256, 256, 0.5);
+  box-sizing: content-box;
+  border-radius: 30px;
+  border: none;
+  color: rgb(46 139 87 / 70%);
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: rgb(113 207 65 / 50%);
+  color: palegreen;
+}
+
+.clearButton {
+  width: 44px;
+  padding: 8px;
+  height: 16px;
+  font-size: medium;
+  font-weight: 600;
+  background-color: rgba(256, 256, 256, 0.5);
+  box-sizing: content-box;
+  border-radius: 30px;
+  border: none;
+  color: rgb(255 18 1 / 70%);
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background-color: rgb(175 13 13 / 48%);
+  color: rgb(255 133 133);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  background: transparent;
 }
