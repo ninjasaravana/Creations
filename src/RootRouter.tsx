@@ -11,6 +11,7 @@ import Modal from "./screens/modal/modal";
 import Checkbox from "./screens/checkbox/checkbox";
 import Rotate from "./screens/rotate/rotate";
 import Pagination from "./screens/pagination/pagination";
+import FoodApp from "./screens/foodApp/foodApp";
 
 const RootRouter = () => {
   return (
@@ -27,6 +28,7 @@ const RootRouter = () => {
         <Route path='/pagination' element={<Pagination />} />
         <Route path='/rotate' element={<Rotate />} />
         <Route path='/search' element={<SearchFilter />} />
+        <Route path='/food' element={<FoodApp />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </>
