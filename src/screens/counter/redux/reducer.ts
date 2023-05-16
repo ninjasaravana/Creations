@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 
-const reducerFn = (state: any = { counter: 0 }, action: any) => {
+export const counterReducerFn = (state: any = { counter: 0 }, action: any) => {
   if (action.type === "INC") {
     return { counter: state.counter + 1 };
   }
@@ -21,5 +21,5 @@ const reducerFn = (state: any = { counter: 0 }, action: any) => {
   return state;
 };
 
-const reduxStore = createStore(reducerFn);
+const reduxStore = createStore(counterReducerFn);
 export default reduxStore;

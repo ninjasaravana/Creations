@@ -3,16 +3,16 @@
   width: 100%;
   justify-content: center;
   background-size: cover;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .container {
   width: 60%;
-  margin: 100px;
+  margin: 79px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
 }
 
@@ -30,13 +30,40 @@
   border-radius: 50px;
 }
 
+.totalCard {
+  padding: 16px;
+  margin-top: 40px;
+  background: rgb(65 94 121 / 81%);
+  border-radius: 50px;
+  width: fit-content;
+  align-self: center;
+  display: flex;
+  align-items: center;
+
+}
+
+.total {
+  margin: 0px;
+  width: fit-content;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  color: wheat;
+  font-family: system-ui;
+  letter-spacing: 8px;
+
+}
+
+.moneyIcon {
+  width: 50px;
+}
 .card {
   display: flex;
   gap: 16px;
   flex-direction: column;
 }
 
-/*  */
 .foodCard {
   display: flex;
   flex-direction: row;
@@ -48,30 +75,51 @@
   border-radius: 16px;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .resultCard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding: 12px;
   gap: 30px;
+  justify-content: flex-start;
   backdrop-filter: blur(5px);
   background: rgb(65 94 121 / 81%);
   border-radius: 30px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .foodContent {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  min-width: 79%;
+    max-width: 79%;
 }
 
 .resultContent {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(143, 183, 143, 0.3);
+    padding: 16px;
+    border-radius: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .resultName {
+    height: 16px;
+    align-items: center;
   justify-content: flex-start;
+  display: flex;
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: 800;
+    color: #f7ffb2;
+    padding: 8px;
 }
 
 .resultValue {
@@ -80,12 +128,23 @@
   justify-content: flex-start;
   display: flex;
   font-family: monospace;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 800;
   color: coral;
   padding: 8px;
 }
 
+.noData {
+  height: 16px;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  font-family: monospace;
+  font-size: 17px;
+  font-weight: 800;
+  color: #f7ffb2;
+  padding: 8px;
+}
 .foodName {
   height: 24px;
   align-items: center;
@@ -109,6 +168,7 @@
   padding: 8px;
   background: rgb(9 94 170 / 40%);
   border-radius: 50px;
+  letter-spacing: 1.5px;
 }
 
 .foodCount {
@@ -122,6 +182,11 @@
   height: 16px;
   border: none;
   cursor: pointer;
+  outline: none;
+  }
+  
+  .foodCount:focus-within {
+    outline: 2px solid rgb(79 187 108);
 }
 
 .buttonArea {
@@ -131,12 +196,14 @@
   justify-content: space-between;
   gap: 8px;
 }
-.buttonSection{
+.buttonSection {
   display: flex;
   gap: 8px;
+  align-self: flex-end;
 }
+
 .addButton {
-  width: 44px;
+  width: 45px;
   padding: 8px;
   height: 16px;
   font-size: medium;
@@ -154,6 +221,9 @@
   color: palegreen;
 }
 
+.addButton:disabled {
+  display: none;
+}
 .clearButton {
   width: 44px;
   padding: 8px;
@@ -164,7 +234,8 @@
   box-sizing: content-box;
   border-radius: 30px;
   border: none;
-  color: rgb(255 18 1 / 70%);
+  background-color: rgb(175 13 13 / 48%);
+    color: rgb(255 133 133);
   cursor: pointer;
 }
 
@@ -177,4 +248,35 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
   background: transparent;
+}
+.clearCart {
+  margin: 24px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #226d58a3;
+  align-self: flex-end;
+  cursor: pointer;
+  position: absolute;
+  top: 0px
+}
+
+.clearCart:hover {
+  box-shadow: 2px 2px 4px darkorange;
+}
+
+.clearCartIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.strike {
+  border: 1px solid crimson;
+  rotate: 130deg;
+  width: 50px;
+  z-index: 999;
+  position: absolute;
 }

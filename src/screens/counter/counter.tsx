@@ -3,7 +3,7 @@ import styles from "./counter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const Counter: React.FC = () => {
-  const counter = useSelector((state: any) => state.counter);
+  const counter = useSelector((state: any) => state.counter.counter);
   const dispatch = useDispatch();
   const increment = () => {
     dispatch({ type: "INC" });

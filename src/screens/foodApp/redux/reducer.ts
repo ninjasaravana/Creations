@@ -39,8 +39,13 @@ const cartSlice = createSlice({
       );
       if (updatedFood) updatedFood.count = action.payload.count;
     },
+    clearCart: (state) => {
+      state.items = [];
+    },
   },
 });
 
-export const { addItem, removeItem ,updateItemCount} = cartSlice.actions;
+export const { addItem, removeItem, updateItemCount, clearCart } =
+  cartSlice.actions;
+
 export default cartSlice.reducer;
