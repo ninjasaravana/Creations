@@ -1,0 +1,39 @@
+.fieldContainer {
+    position: relative;
+    width: fit-content;
+    justify-content: center;
+    display: flex;
+    margin: 24px;
+    align-self: center;
+    flex-direction: column;
+
+}
+
+.title {
+    padding: 32px
+}
+
+.nameField {
+    border: none;
+    border-bottom: 1px solid goldenrod;
+    top: 0px;
+    outline: none;
+    width: 300px;
+}
+
+.nameField:focus-within {
+    border-bottom: 2px solid green;
+}
+
+.nameFieldLabel {
+    position: absolute;
+    top: 82%;
+    left: 4px;
+    transition: all 0.3s ease-in-out
+}
+
+.nameField:focus-within~.nameFieldLabel {
+    transform: translateY(-100%);
+    top: 70%;
+    font-weight: bold;
+}

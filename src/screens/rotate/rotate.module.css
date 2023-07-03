@@ -1,8 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 32px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 32px
+}
+
 .top {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 32px;
+    background-color: rgba(256, 256, 256, 0.3);
+    border-radius: 50%;
 }
 
 .layer {
@@ -19,4 +36,12 @@
     font-size: 24px;
     align-items: center;
     justify-content: center;
+    transition: 1s;
+}
+
+.boxColor {
+    color: orangered;
+    transition: 1s;
+    font-weight: Bold;
+    border-radius: 50%;
 }

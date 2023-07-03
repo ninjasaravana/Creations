@@ -3,7 +3,7 @@
     width: 100%;
     justify-content: center;
     margin: 50px 0;
-        font-family: monospace;
+    font-family: monospace;
 }
 
 .cover {
@@ -51,9 +51,12 @@
     outline: 2px solid royalblue;
     height: 100%
 }
+
 .message {
     font-size: 20px;
     font-weight: 800;
-    padding-bottom: 24px;
+    padding: 8px;
     color: yellowgreen;
+    background-color: white;
+    text-align: center;
 }

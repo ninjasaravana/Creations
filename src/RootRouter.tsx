@@ -12,6 +12,10 @@ import Checkbox from "./screens/checkbox/checkbox";
 import Rotate from "./screens/rotate/rotate";
 import Pagination from "./screens/pagination/pagination";
 import FoodApp from "./screens/foodApp/foodApp";
+import ToggleButton from "./screens/toggleButton/toggleButton";
+import Workspace from "./screens/workspace/workspace";
+import FileExplorer from "./screens/explorer/fileExplorer";
+import Clock from "./screens/clock/clock";
 
 const RootRouter = () => {
   return (
@@ -29,6 +33,10 @@ const RootRouter = () => {
         <Route path='/rotate' element={<Rotate />} />
         <Route path='/search' element={<SearchFilter />} />
         <Route path='/food' element={<FoodApp />} />
+        <Route path='/toggle' element={<ToggleButton />} />
+        <Route path='/problems' element={<Workspace />} />
+        <Route path='/fileExplorer' element={<FileExplorer />} />
+        <Route path='/clock' element={<Clock />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </>

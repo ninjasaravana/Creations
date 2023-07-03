@@ -27,6 +27,7 @@
     padding: 8px;
     border: 1px solid teal;
     background-color: honeydew;
+    font-weight: bolder;
 }
 
 .tableRow {
@@ -52,9 +53,11 @@
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    color: mediumslateblue;
+    color: rgb(21 249 168);
     border: none;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
 }
 
 .paginationSelection {
@@ -65,7 +68,7 @@
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    color: mediumslateblue;
+    color: rgb(249, 21, 89);
     border: none;
     cursor: pointer;
     font-weight: 800;

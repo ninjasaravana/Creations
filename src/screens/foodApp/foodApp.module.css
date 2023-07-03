@@ -58,6 +58,7 @@
 .moneyIcon {
   width: 50px;
 }
+
 .card {
   display: flex;
   gap: 16px;
@@ -95,31 +96,31 @@
   display: flex;
   justify-content: space-between;
   min-width: 79%;
-    max-width: 79%;
+  max-width: 79%;
 }
 
 .resultContent {
   display: flex;
   flex-direction: row;
-    justify-content: space-between;
-    background-color: rgba(143, 183, 143, 0.3);
-    padding: 16px;
-    border-radius: 30px;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  
-  .resultName {
-    height: 16px;
-    align-items: center;
+  justify-content: space-between;
+  background-color: rgba(143, 183, 143, 0.3);
+  padding: 16px;
+  border-radius: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.resultName {
+  height: 16px;
+  align-items: center;
   justify-content: flex-start;
   display: flex;
-    font-family: monospace;
-    font-size: 17px;
-    font-weight: 800;
-    color: #f7ffb2;
-    padding: 8px;
+  font-family: monospace;
+  font-size: 17px;
+  font-weight: 800;
+  color: #f7ffb2;
+  padding: 8px;
 }
 
 .resultValue {
@@ -145,6 +146,7 @@
   color: #f7ffb2;
   padding: 8px;
 }
+
 .foodName {
   height: 24px;
   align-items: center;
@@ -183,10 +185,10 @@
   border: none;
   cursor: pointer;
   outline: none;
-  }
-  
-  .foodCount:focus-within {
-    outline: 2px solid rgb(79 187 108);
+}
+
+.foodCount:focus-within {
+  outline: 2px solid rgb(79 187 108);
 }
 
 .buttonArea {
@@ -196,6 +198,7 @@
   justify-content: space-between;
   gap: 8px;
 }
+
 .buttonSection {
   display: flex;
   gap: 8px;
@@ -224,6 +227,7 @@
 .addButton:disabled {
   display: none;
 }
+
 .clearButton {
   width: 44px;
   padding: 8px;
@@ -235,7 +239,7 @@
   border-radius: 30px;
   border: none;
   background-color: rgb(175 13 13 / 48%);
-    color: rgb(255 133 133);
+  color: rgb(255 133 133);
   cursor: pointer;
 }
 
@@ -249,6 +253,7 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
   background: transparent;
 }
+
 .clearCart {
   margin: 24px;
   width: 60px;

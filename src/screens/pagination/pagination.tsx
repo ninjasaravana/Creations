@@ -1,6 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
 import styles from "./pagination.module.css";
-import Select from "react-select";
 
 type recordType = {
   value: number;
@@ -20,9 +19,6 @@ const Pagination: React.FC = () => {
     (page: number) => {
       setActive(page - 1);
       setPageContent(records.slice(page * 10 - 10, page * 10));
-      console.log({ records });
-      console.log({ page });
-      console.log("recods sliced", records.slice(page * 10 - 10, page * 10));
       return;
     },
     [records]
@@ -30,7 +26,6 @@ const Pagination: React.FC = () => {
   return (
     <div className={styles.parent}>
       <h2>Pagination</h2>
-
       <div className={styles.tableContainer}>
         <td className={styles.tableHeader}>Content</td>
         {pageContent.map((record, idx) => {
