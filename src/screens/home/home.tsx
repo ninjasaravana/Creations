@@ -29,7 +29,7 @@ const Home: React.FC = () => {
     <Checkbox />,
     <ToggleButton />,
     <Pagination />,
-    <Rotate />,
+    <Rotate tata={"hi"} />,
     <FileExplorer />,
     <Clock />,
   ];

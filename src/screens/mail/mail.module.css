@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    gap:8px;
+    width: 100%;
+    height: 100vh;
+}
+
+.mailSections{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: coral;
+    min-width: 20%;
+    max-width: 20%;
+    height: 100%;
+    gap:4px;
+}
+.mails{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: burlywood;
+    min-width: 30%;
+    max-width: 30%;
+    height: 100%;
+    gap: 4px;
+}
+.mailContent{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: burlywood;
+    min-width: 50%;
+    max-width: 50%;
+    height: 100%;
+}
+
+.mailCard{
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
+    background-color: bisque;
+    width: 100%;
+    border:1px solid black;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+span{
+    font-size: 16px;
+    font-weight: 400;
+    color:black;
+}
+
+.count{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+}
+.date{
+    width: 100px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+}

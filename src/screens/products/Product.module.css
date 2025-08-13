@@ -1,0 +1,40 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 150px;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: bisque;
+    border: 1px solid brown;
+    border-radius: 8px;
+  }
+  
+  .imageContainer,
+  .productImage {
+    min-width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+  }
+  .productContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .buttonStyle {
+    float: right;
+    border-radius: 50%;
+    background-color: yellow;
+    color: black;
+    padding: 8px;
+  }
+  

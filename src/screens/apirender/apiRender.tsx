@@ -20,6 +20,12 @@ const ApiRender = () => {
         console.log(e);
       }
     };
+
+    const proData = () =>
+      fetch("https://dog.ceo/api/breeds/image/random").then((resp) =>
+        resp.json().then((d) => console.log(d))
+      );
+    proData();
     fetchData();
   }, []);
 

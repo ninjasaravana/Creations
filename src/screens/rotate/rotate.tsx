@@ -1,7 +1,33 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import styles from "./rotate.module.css";
 
-const Rotate: React.FC = () => {
+const Rotate: React.FC<{ tata: string }> = ({ tata }) => {
+  const p1 = new Promise((res, rej) => {
+    setTimeout(function () {
+      res("p1");
+    }, 5000);
+  });
+
+  const p2 = new Promise((res, rej) => {
+    setTimeout(function () {
+      res("p2");
+    }, 2000);
+  });
+  function handle1() {
+    return "BYE";
+  }
+  let h1 = handle1(); //.then((d) => d);
+  console.log("HANDLE 1", h1);
+  async function handle() {
+    let val = await p1;
+    console.log("FIRST");
+    console.log(val);
+    let val2 = await p2;
+    console.log("SECOND");
+    console.log(val2);
+  }
+  // handle();
+
   const [a, setA] = useState([1, 2, 3]);
   const [b, setB] = useState([4, 0, 5]);
   const [c, setC] = useState([6, 7, 8]);

@@ -1,0 +1,30 @@
+.parent {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.block{
+    width:98px;
+    height:98px;
+    background-color: chartreuse;
+    border:1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+@media screen and (max-width:900px){
+    .block{
+        width: 25%;
+    }
+}
+@media screen and (max-width:300px){
+    .block{
+        width: 90%;
+    }
+}

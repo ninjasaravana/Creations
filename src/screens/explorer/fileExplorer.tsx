@@ -1,63 +1,68 @@
 import React, { useCallback, useState } from "react";
 import { explorerStructure, fileStruct } from "./explorer";
 import styles from "./fileExplorer.module.css";
+
 const FileExplorer: React.FC = () => {
-  var input = explorerStructure;
+  var tree = explorerStructure;
   const [expand, setExpand] = useState<{ [key: string]: boolean }>({});
 
-  const expandFiles = useCallback((file: fileStruct) => {
-    setExpand((prevExpand) => {
-      if (file.isFolder && prevExpand[file.name]) {
-        return { ...prevExpand, [file.name]: !prevExpand[file.name] };
-      } else if (file.isFolder && !prevExpand[file.name]) {
-        return { ...prevExpand, [file.name]: true };
-      } else {
-        return { ...prevExpand, [file.name]: false };
-      }
+  const expandManage = useCallback((structure: fileStruct) => {
+    setExpand((prev) => {
+      if (structure.isFolder && prev[structure.name] !== undefined)
+        return { ...prev, [structure.name]: !prev[structure.name] };
+      else if (structure.isFolder && prev[structure.name] === undefined)
+        return { ...prev, [structure.name]: true };
+      else return { ...prev };
     });
   }, []);
 
-  const fileTemplate = useCallback(
-    (file: fileStruct, idx: number) => {
+  const treeExpand = useCallback(
+    (structure: fileStruct) => {
       return (
         <>
-          <div
-            className={styles.title}
-            key={idx}
-            onClick={() => expandFiles(file)}
-          >
-            {file.name}
-          </div>
+          {structure?.items?.length &&
+            structure.items.map((file, idx) => (
+              <div style={{ marginLeft: "50px" }}>
+                <div
+                  className={styles.fileBox}
+                  key={idx + file.name}
+                  onClick={() => expandManage(file)}
+                >
+                  <span> {expand[file.name] ? "+" : "-"}</span>
+                  <span>{file.name}</span>
+                </div>
+                <div>
+                  {file.items &&
+                    file.isFolder &&
+                    expand[file.name] &&
+                    treeExpand(file)}
+                </div>
+              </div>
+            ))}
         </>
       );
     },
-    [expandFiles]
-  );
-
-  const expTemplate = useCallback(
-    (file: fileStruct, idx: number) => {
-      return (
-        <>
-          {fileTemplate(file, idx)}
-          {expand[file.name] && file?.items && (
-            <div key={idx} style={{ marginLeft: 32 }}>
-              {file?.items.map((item, index) => {
-                return expTemplate(item, index);
-              })}
-            </div>
-          )}
-        </>
-      );
-    },
-    [expand, fileTemplate]
+    [expand, expandManage]
   );
 
   return (
-    <div className={styles.container}>
-      <span className={styles.heading}>File Explorer</span>
-      {input.map((file, idx) => {
-        return expTemplate(file, idx);
-      })}
+    <div>
+      <title>File Explorer</title>
+      <div className={styles.container}>
+        {tree.map((file, idx) => (
+          <>
+            <div
+              className={styles.fileBox}
+              key={idx + file.name}
+              onClick={() => expandManage(file)}
+            >
+              <span> {expand[file.name] ? "+" : "-"}</span>
+              <span>{file.name}</span>
+            </div>
+            {expand[file.name] && <>{treeExpand(file)}</>}
+          </>
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,49 +1,27 @@
-.container {
+.container{
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin: 32px;
-}
-
-.heading {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 32px
-}
-
-.title {
-    width: fit-content;
-    align-self: center;
-    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin:25px;
     justify-content: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: wheat;
-    font-family: system-ui;
-    letter-spacing: 8px;
-    padding: 8px;
-    background: rgb(65 94 121 / 81%);
-    border-radius: 50px;
-    padding: 16px;
-    margin: 8px;
-    cursor: pointer
 }
 
-.sub {
-    width: fit-content;
-    align-self: center;
+.fileBox{
     display: flex;
-    justify-content: center;
+    width: 300px;
+    height: 40px;
+    padding:8px;
+    gap:8px;
+    background-color: chartreuse;
+    color: white;
+    margin: 8px 0px;
     font-size: 16px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+span{
+    font-size: 20px;
     font-weight: bold;
-    color: wheat;
-    font-family: system-ui;
-    letter-spacing: 8px;
-    padding: 8px;
-    background: rgba(110, 158, 204, 0.81);
-    border-radius: 50px;
-    padding: 16px;
-    margin: 8px 32px;
-    cursor: pointer;
 }
