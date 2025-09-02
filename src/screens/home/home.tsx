@@ -69,7 +69,6 @@ const Home: React.FC = () => {
         }}
       >
         <button
-          ref={colorButton}
           className={styles.infinite}
           onClick={() => navigate("/infinitescroll")}
         >
