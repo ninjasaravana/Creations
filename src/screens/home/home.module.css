@@ -14,7 +14,6 @@
     width: 130px;
     height: 40px;
     padding: 8px;
-    margin: 32px;
     border-radius: 16px;
     background-color: black;
     border: none;
@@ -27,4 +26,21 @@
 
 .foodApp:hover {
     font-size: 18px;
+}
+.infinite {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.infinite:hover {
+    font-size: 28px;
 }

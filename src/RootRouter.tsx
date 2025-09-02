@@ -20,6 +20,7 @@ import Resize from "./screens/resize/resize";
 import Mail from "./screens/mail/mail";
 import Product from "./screens/products/Product";
 import DragDrop from "./screens/dragDrop/DragDrop";
+import InfiniteScrollMain from "./screens/infiniteScroll/infiniteScrollMain";
 
 const RootRouter = () => {
   return (
@@ -46,6 +47,7 @@ const RootRouter = () => {
         <Route path='/resize' element={<Resize />} />
         <Route path='/product' element={<Product />} />
         <Route path='/drag' element={<DragDrop />} />
+        <Route path='/infinitescroll' element={<InfiniteScrollMain />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </>

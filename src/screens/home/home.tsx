@@ -61,13 +61,29 @@ const Home: React.FC = () => {
   });
   return (
     <div className={styles.container}>
-      <button
-        ref={colorButton}
-        className={styles.foodApp}
-        onClick={navigateToFoodApp}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          gap: "20px",
+          margin: "16px 16px 0 16px",
+        }}
       >
-        Food App
-      </button>
+        <button
+          ref={colorButton}
+          className={styles.infinite}
+          onClick={() => navigate("/infinitescroll")}
+        >
+          ∞
+        </button>
+        <button
+          ref={colorButton}
+          className={styles.foodApp}
+          onClick={navigateToFoodApp}
+        >
+          Food App
+        </button>
+      </div>
       {components.map((component, idx) => {
         return (
           <>
