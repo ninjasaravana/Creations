@@ -31,7 +31,6 @@ const Home: React.FC = () => {
     <Pagination />,
     <Rotate tata={"hi"} />,
     <FileExplorer />,
-    <Clock />,
   ];
   const navigate = useNavigate();
   const colorButton = useRef<HTMLButtonElement>(null);
